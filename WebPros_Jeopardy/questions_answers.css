@@ -1,0 +1,63 @@
+*{
+    font-family: "Open Sans", "DejaVu Sans", sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+html, body{
+    height: 100%;
+}
+body{
+     background-color: #1c2841;
+}
+
+fieldset{
+    border: 10px solid darkgray;
+    background: rgb(255,255,255, 0.2);
+    width: 70%;
+    height: 50%;
+    margin: 25px auto auto;
+    text-align: center;
+    padding-right: 25px;
+}
+
+p, label, input[type=submit], legend{
+    font-size: larger;
+    font-weight: bold;
+}
+
+legend{
+    border: 2px solid gray;
+    background-color: wheat;
+}
+
+input[type = submit]{
+    width: 40%;
+    height: 40px;
+    margin-bottom: 20px;
+    margin-right: 20px;
+    background: linear-gradient(45deg, #647DEE, #7F53AC);
+    cursor: pointer;
+}
+
+input[type = submit]:hover{
+    transform: scale(1.1, 1.1);
+    background: lightskyblue;
+    box-shadow: 1px 8px 5px black;
+}
+
+.correct{
+    background-color: lightgreen;
+}
+
+.wrong{
+    background-color: rgba(255, 0, 0, 0.78);
+}
+
+a{
+    color: wheat;
+}
+
+a:visited{
+    color: wheat;
+}

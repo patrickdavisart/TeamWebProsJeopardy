@@ -1,0 +1,23 @@
+
+body {
+  background:#1c2841;
+}
+h1{
+    height: 45px;
+    width: 30%;
+    color: wheat;
+	text-align: center;
+	font-family: htimes new roman;
+	margin: auto; ;
+}
+p{
+    height: 5px;
+    color: white;
+	text-align: center;
+}
+label{
+    height: 65px;
+    width: 12%;
+    color: wheat;
+	text-align: center;
+}

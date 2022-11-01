@@ -1,0 +1,60 @@
+*{
+    color: wheat;
+    font-family: Georgia sans-serif;
+}
+
+html, body{
+    height: 100%;
+}
+
+body {
+    background:#1c2841;;
+}
+
+table{
+    background: rgb(255,255,255, 0.5);
+    height: 60%;
+    margin: auto;
+    border: 5px solid gray;
+    border-radius: 10px;
+}
+
+caption{
+    font-size: 60px;
+}
+
+tr,th{
+    border: 1px solid gray;
+}
+
+th{
+    height: 40px;
+    width: 150px;
+    background-color: #1c2841;
+    font-weight: bold;
+    font-size: 1.5em;
+}
+
+.button{
+    background:  linear-gradient(45deg, #647DEE, #7F53AC);
+    border: 4px solid black;
+    border-radius: 4px;
+    font-size: large;
+    height: 60px;
+    width: 150px;
+    color: wheat;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.button:hover{
+    background: lightskyblue;
+    transition: background-color 0.5s;
+    transform: scale(1.2, 1.2);
+    box-shadow: 1px 8px 6px black;
+
+}
+.button:active{
+    background: rebeccapurple;
+    transition: background-color 0.5s;
+}

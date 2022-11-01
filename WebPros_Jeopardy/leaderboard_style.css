@@ -1,0 +1,62 @@
+body, html{
+    height: 100%;
+    background:#1c2841;
+}
+
+table{
+    height: 50%;
+    width: 50%;
+    margin-top: 50px;
+    margin-left: 300px;
+    background: wheat;
+    animation-name: changetable;
+    animation-duration: 3s;
+    animation-delay: 0.1s;
+}
+
+@keyframes changetable{
+    0%{
+        background-color: #1c2841;
+        color: wheat;
+        border: 2px solid wheat;
+    }
+
+    50%{
+        background: wheat;
+        color: #1c2841;
+        border: 2px solid #1c2841;
+    }
+}
+
+td, th{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 2em;
+    color: #1c2841;
+    border: 2px solid #1c2841;
+}
+
+caption{
+    color: wheat;
+    font-size: 4em;
+}
+
+td{
+    text-align: center;
+}
+
+input[type = submit]{
+    color: wheat;
+    width: 16%;
+    height: 40px;
+    margin-bottom: 20px;
+    margin-right: 20px;
+    margin-top: 20px;
+    background: linear-gradient(45deg, #647DEE, #7F53AC);
+    cursor: pointer;
+}
+
+input[type = submit]:hover{
+    transform: scale(1.1, 1.1);
+    background: lightskyblue;
+    box-shadow: 1px 8px 5px black;
+}
