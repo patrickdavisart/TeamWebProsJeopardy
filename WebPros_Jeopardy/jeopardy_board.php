@@ -1,6 +1,5 @@
 <?php
 session_start();
-setcookie("games", "quiz games", time() + 86400, "/");
 if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] != true) {
     header("location: welcome.php");
     exit;
@@ -32,7 +31,7 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] != true) {
             </tr>
 
             <tr>
-                <td><a href="soccer_100.php"><button type="submit" class="button">$100</button></td>
+                <td><a href="soccer_100.php"><button class="button">$100</button></a></td>
                 <td><a href="nature_100.php"><button class="button">$100</button></a></td>
                 <td><a href="marvel_100.php"><button class="button">$100</button></a></td>
                 <td><a href="Superheroes_100.php"><button class="button">$100</button></a></td>

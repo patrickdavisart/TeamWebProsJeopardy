@@ -11,6 +11,11 @@ body {
     background:#1c2841;;
 }
 
+#errormessage{
+    background-color: tomato;
+	height: 25px;
+	color: maroon;
+}
 table{
     background: rgb(255,255,255, 0.5);
     height: 60%;

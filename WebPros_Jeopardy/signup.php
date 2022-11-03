@@ -1,4 +1,6 @@
 <?php
+$pwd_error = false;
+$username_exists = false;
 if ($_SERVER['REQUEST_METHOD'] == "POST") {
     
     include '_dbconnect.php';
@@ -12,14 +14,15 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
     $num_row = mysqli_num_rows($result);
 
     if($num_row > 0){
-        $showError = "Username exists. Please try again!";
+        $$username_exists = true;
     }else{
         if($password == $cpassword){
-            $sql =  "INSERT INTO `demo-registration`.`credentials` (`id`, `username`, `password`, `date`) VALUES (NULL, '$username', '$password', current_timestamp())";
+			$hashcode = password_hash($password, PASSWORD_DEFAULT);
+            $sql =  "INSERT INTO `demo-registration`.`credentials` (`id`, `username`, `password`, `date`) VALUES (NULL, '$username', '$hashcode', current_timestamp())";
             $result = mysqli_query($conn, $sql);
             header('welcome.php');
         }else{
-            echo "Passwords do not match";
+            $pwd_error = true;
         }
     }
 }
@@ -49,18 +52,30 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 			</div>
 		</div>
 		<div class="content">
-			<h1> Welcome <br><span> To The </span> <br>Game Of <br><span>Jeopardy!!</span></h1>
-			<p class="par"> Jeopardy is the game of answer-and-question form.  </p>
-			<div class="form">
+			<h1> Welcome <br><span> To The </span> <br>Game Of <br></h1>
+			<div class="signup-form">
 				<h2>Signup Here</h2>
 				<form action="signup.php" method="POST">
                 <label for="username"></label>
-                <input type="text" name="username" placeholder="Enter username here" id="username">
-                <label for="password"></label>
-				<input type="password" placeholder="Enter Password Here" name="password" id="password">
-                <label for="cpassword"></label>
-                <input type="password" placeholder="Confirm Password Here" name="cpassword" id="cpassword">
-                <input type="submit" class="btnn" value="signup">
+                <input type="text" name="username" placeholder="Enter username here" id="username" required maxlength="16">
+                <p class="form-element">Username<br>(Enter any 16 characters)</p>
+				<label for="password"></label>
+				<input type="password" placeholder="Enter Password Here" name="password" id="password" required  maxlength="16">
+                <p class="form-element">Password<br>(Enter any 16 characters)</p>
+				<label for="cpassword"></label>
+                <input type="password" placeholder="Confirm Password Here" name="cpassword" id="cpassword" required  maxlength="16">
+                <p class="form-element">Confirm Password</p>
+				<input type="submit" class="btnn" value="Signup">
+
+				<?php
+					if($pwd_error){
+						echo "<p class='errormessage'> Passwords don't match </p>";
+					}else if($username_exists){
+						echo "<p class='errormessage'> Username Exists. Please try again</p>";
+					}else{
+						echo "<p class='success'>Sign Up successful!</p>";
+					}
+				?>
                 </form>
 				<p class="link">Already have an account?<br>
 				<a href="welcome.php">Login here</a></p>
@@ -69,9 +84,8 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 
 	<div class="cookies-card">
 		<p class="title">cookie content</p>
-		<p class="info">By using this website, you automatically accept that we use cookies.<a href="#">Read more</a></p>
-		<button class="cta">Accept all</button>
-		<a href="#" class="setting">Cookie settings</a>
+		<p class="info">By using this website, you automatically accept that we use cookies.<a href="#">Dismiss</a></p>
+		
 	</div>
 </body>
 </html>

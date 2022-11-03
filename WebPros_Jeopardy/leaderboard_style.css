@@ -1,6 +1,7 @@
 body, html{
     height: 100%;
     background:#1c2841;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 table{
@@ -9,27 +10,23 @@ table{
     margin-top: 50px;
     margin-left: 300px;
     background: wheat;
-    animation-name: changetable;
+    color:#1c2841;
+    animation-name: fade-table;
     animation-duration: 3s;
     animation-delay: 0.1s;
 }
 
-@keyframes changetable{
+@keyframes fade-table{
     0%{
-        background-color: #1c2841;
-        color: wheat;
-        border: 2px solid wheat;
+       opacity: 0;
     }
 
-    50%{
-        background: wheat;
-        color: #1c2841;
-        border: 2px solid #1c2841;
+    100%{
+        opacity: 1;
     }
 }
 
 td, th{
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     font-size: 2em;
     color: #1c2841;
     border: 2px solid #1c2841;
