@@ -1,6 +1,6 @@
 <?php
-$pwd_error = false;
-$username_exists = false;
+$pwd_error = NULL;
+$username_exists = NULL;
 if ($_SERVER['REQUEST_METHOD'] == "POST") {
     
     include '_dbconnect.php';
@@ -72,8 +72,6 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 						echo "<p class='errormessage'> Passwords don't match </p>";
 					}else if($username_exists){
 						echo "<p class='errormessage'> Username Exists. Please try again</p>";
-					}else{
-						echo "<p class='success'>Sign Up successful!</p>";
 					}
 				?>
                 </form>
